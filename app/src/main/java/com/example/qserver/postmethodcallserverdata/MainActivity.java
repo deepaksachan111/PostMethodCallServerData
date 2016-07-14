@@ -194,9 +194,9 @@ public class MainActivity extends AppCompatActivity {
 
             String URL = null;
 
-             // postMethod();
+            postMethod("http://clients.aksinteractive.com/PlanningWale/signUp.php");
 
-            getMethod(urls[0]);
+            //getMethod(urls[0]);
 
             return responce;
         }
@@ -277,9 +277,16 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Post Data
-        List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>(2);
-        nameValuePair.add(new BasicNameValuePair("username", "test_user"));
-        nameValuePair.add(new BasicNameValuePair("password", "123456789"));
+        List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>();
+        nameValuePair.add(new BasicNameValuePair("type", "name"));
+        nameValuePair.add(new BasicNameValuePair("deviceId", "dee@gmail.com"));
+        nameValuePair.add(new BasicNameValuePair("userName", "test_user"));
+        nameValuePair.add(new BasicNameValuePair("email", "deegggggggggggggggggggg@gmail.com"));
+        nameValuePair.add(new BasicNameValuePair("phoneNumber", "123456789"));
+        nameValuePair.add(new BasicNameValuePair("password", "1234567890"));
+        nameValuePair.add(new BasicNameValuePair("profilePic", "picturePath"));
+
+
 
 
         //Encoding POST data
@@ -310,3 +317,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
+/*
+
+Escape Sequences
+Escape Sequence Description
+        \t  Insert a tab in the text at this point.
+        \b  Insert a backspace in the text at this point.
+        \n  Insert a newline in the text at this point.
+        \r  Insert a carriage return in the text at this point.
+        \f  Insert a formfeed in the text at this point.
+        \'  Insert a single quote character in the text at this point.
+        \"  Insert a double quote character in the text at this point.
+        \\  Insert a backslash character in the text at this point.*/
