@@ -293,7 +293,6 @@ public class MainActivity extends AppCompatActivity {
         try {
             httpPost.setEntity(new UrlEncodedFormEntity(nameValuePair));
         } catch (UnsupportedEncodingException e) {
-            // log exception
             e.printStackTrace();
         }
 
