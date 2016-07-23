@@ -98,6 +98,9 @@ public class MainActivity extends AppCompatActivity {
                 new DownlineRecordDisplayAsyncTask().execute(url);
             }
         });
+
+
+
     }
 
 
@@ -175,13 +178,7 @@ public class MainActivity extends AppCompatActivity {
     private class DownlineRecordDisplayAsyncTask extends AsyncTask<String, Void, String> {
 
 
-        private static final int REGISTRATION_TIMEOUT = 10 * 1000;
-        private static final int WAIT_TIMEOUT = 50 * 1000;
-        private final HttpClient httpclient = new DefaultHttpClient();
-        final HttpParams params = httpclient.getParams();
 
-        private String content = null;
-        private boolean error = false;
         private ProgressDialog dialog = new ProgressDialog(MainActivity.this);
 
         protected void onPreExecute() {
@@ -211,8 +208,8 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String content) {
             dialog.dismiss();
 
-            if (error) {
-                Toast.makeText(MainActivity.this, content, Toast.LENGTH_LONG).show();
+            if (content.equals("")) {
+                Toast.makeText(MainActivity.this, "Data Not found", Toast.LENGTH_LONG).show();
 
 
                 //displayCountryList(content);
